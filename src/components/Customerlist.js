@@ -3,8 +3,11 @@ import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
+import Addcustomer from './Addcustomer';
+import Grid from '@material-ui/core/Grid';
 
-const CustomerList = () => {
+
+const Customerlist = () => {
     const [customers, setCustomers] = useState([]);
     const [open, setOpen] = useState(false);
     const [message, setMessage] = useState("");
@@ -25,6 +28,20 @@ const CustomerList = () => {
        
        })
     };
+
+    const saveCustomer = (newCustomer) => {
+        fetch('https://customerrest.herokuapp.com/api/customers',
+         {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify(newCustomer)
+            } )
+            .then(res => fetchCustomers())
+            .catch(err => console.error(err))
+    }
+
     const deleteCustomer = (link) => {
         if (window.confirm('Are you sure?')) {
         fetch(link, {method: 'DELETE'})
@@ -33,9 +50,9 @@ const CustomerList = () => {
         .then (res => setOpen(true))
         .catch(err => console.error(err))
        } }
-    
 
-    const Customercolumns = [{    
+    const Customercolumns = [
+    {    
     
         accessor: 'links[0].href',
         filterable: false,
@@ -78,13 +95,16 @@ const CustomerList = () => {
 
 return (
     <div>
-        <grid container>
-        <ReactTable filterable={true} columns={Customercolumns} data={customers}/>
-        <Snackbar open={open} autoHideDuration={3000} onClose={handleClose} message={message}/>
-   </grid>
+        <Grid >
+        <Grid item>
+            <Addcustomer saveCustomer = {saveCustomer}/>   
+       </Grid>
+            <ReactTable filterable={true} columns={Customercolumns} data={customers}/>
+            <Snackbar open={open} autoHideDuration={3000} onClose={handleClose} message={message}/>
+        </Grid>
  
 
      </div>
 )
 };
-export default CustomerList;
+export default Customerlist;
