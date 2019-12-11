@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## In order to run this project, you need node.js and any js editors, start by cloning the project to your computer and go to the folder via cmd and run the following lines first "npm install" and then "npm start", that will launch this project.
 
 ## Available Scripts
 
