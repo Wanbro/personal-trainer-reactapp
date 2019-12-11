@@ -8,11 +8,11 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
 
-const Addcustomer=(props)=> {
+const Addcustomer = (props) => {
     const [customer, setCustomer] = useState({
-firstname: '', lastname: '', streetaddress: '', postcode: '', city: '', email: '', phone: ''    
-})
-const [open, setOpen] = useState(false);
+        firstname: '', lastname: '', streetaddress: '', postcode: '', city: '', email: '', phone: ''
+    })
+    const [open, setOpen] = useState(false);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -34,7 +34,7 @@ const [open, setOpen] = useState(false);
     return (
         <div style={{ margin: 10 }}>
             <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-                +
+                Add customer
         </Button>
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
                 <DialogTitle id="form-dialog-title">New Customer</DialogTitle>
@@ -52,53 +52,53 @@ const [open, setOpen] = useState(false);
                         fullWidth
                     />
                     <TextField
-                      margin="dense"
-                      name="lastname"
-                      value={customer.lastname}
-                      onChange={e => handleChange(e)}
-                      label="Lastname"
-                      fullWidth
+                        margin="dense"
+                        name="lastname"
+                        value={customer.lastname}
+                        onChange={e => handleChange(e)}
+                        label="Lastname"
+                        fullWidth
                     />
                     <TextField
-                     margin="dense"
-                     name="streetaddress"
-                     value={customer.streetaddress}
-                     onChange={e => handleChange(e)}
-                     label="Address"
-                     fullWidth
+                        margin="dense"
+                        name="streetaddress"
+                        value={customer.streetaddress}
+                        onChange={e => handleChange(e)}
+                        label="Address"
+                        fullWidth
                     />
                     <TextField
-                      margin="dense"
-                      name="postcode"
-                      value={customer.postcode}
-                      onChange={e => handleChange(e)}
-                      label="Postcode"
-                      fullWidth
+                        margin="dense"
+                        name="postcode"
+                        value={customer.postcode}
+                        onChange={e => handleChange(e)}
+                        label="Postcode"
+                        fullWidth
                     />
                     <TextField
-                      margin="dense"
-                      name="city"
-                      value={customer.city}
-                      onChange={e => handleChange(e)}
-                      label="City"
-                      fullWidth
+                        margin="dense"
+                        name="city"
+                        value={customer.city}
+                        onChange={e => handleChange(e)}
+                        label="City"
+                        fullWidth
                     />
                     <TextField
-                      margin="dense"
-                      name="email"
-                      value={customer.email}
-                      onChange={e => handleChange(e)}
-                      label="Email"
-                      fullWidth
+                        margin="dense"
+                        name="email"
+                        value={customer.email}
+                        onChange={e => handleChange(e)}
+                        label="Email"
+                        fullWidth
                     />
-                     <TextField
-                         margin="dense"
-                         name="phone"
-                         value={customer.phone}
-                         onChange={e => handleChange(e)}
-                         label="Phone number"
-                         fullWidth
-                     />
+                    <TextField
+                        margin="dense"
+                        name="phone"
+                        value={customer.phone}
+                        onChange={e => handleChange(e)}
+                        label="Phone number"
+                        fullWidth
+                    />
 
                 </DialogContent>
                 <DialogActions>
