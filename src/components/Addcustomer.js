@@ -92,6 +92,7 @@ const Addcustomer = (props) => {
                         fullWidth
                     />
                     <TextField
+                        type="number"
                         margin="dense"
                         name="phone"
                         value={customer.phone}
